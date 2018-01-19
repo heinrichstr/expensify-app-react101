@@ -2,6 +2,7 @@ import React from 'react';
 import numeral from 'numeral';
 import { connect } from 'react-redux';
 import getExpensesTotal from '../selectors/expenses-total';
+import selectExpenses from '../selectors/expenses';
 
 //{numeral(amount / 100).format('$0,0.00')} 
 
