@@ -12,3 +12,8 @@ test('should render ExpenseSummary with single expense', () => {
     const wrapper = shallow(<ExpenseSummary expenses={[expenses[2]]} />);
     expect(wrapper).toMatchSnapshot();
 });
+
+test('should render ExpenseSummary with no expenses', () => {
+    const wrapper = shallow(<ExpenseSummary expenses={[]} />);
+    expect(wrapper).toMatchSnapshot();
+});

@@ -9,7 +9,7 @@ import selectExpenses from '../selectors/expenses';
 export const ExpenseSummary = (props) => (
     <div>
         <p>Viewing {
-            `${props.expenses.length} expense${props.expenses.length > 1 ? 's' : '' }`
+            `${props.expenses.length} expense${props.expenses.length !== 1 ? 's' : '' }`
         } totalling {
             numeral(getExpensesTotal(props.expenses) / 100).format('$0,0.00')
         }</p>
@@ -18,7 +18,7 @@ export const ExpenseSummary = (props) => (
 
 const mapStateToProps = (state) => {
     return {
-      expenses: selectExpenses(state.expenses)
+      expenses: selectExpenses(state.expenses, state.filters)
     };
 };
   
